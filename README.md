@@ -11,16 +11,16 @@ for making mistakes.
 
 Engine: Unity 6000.6.3f1
 
-To Do:
-Set up project
-Set up rough player environment
-Create a medication database
-Create a Doctor database
-Create customer database
-Create a rough GUI for the ingame computer
-Connect the GUI text boxes with scripts that read and store information
-Process the information acquired from textboxes against databases
-Create a end of day score screen
-Program the score logic 
-Create a Main menu screen 
-Create a settings menu
+To Do:<br>
+Set up project<br>
+Set up rough player environment<br>
+Create a medication database<br>
+Create a Doctor database<br>
+Create customer database<br>
+Create a rough GUI for the ingame computer<br>
+Connect the GUI text boxes with scripts that read and store information<br>
+Process the information acquired from textboxes against databases<br>
+Create a end of day score screen<br>
+Program the score logic<br>
+Create a Main menu screen<br> 
+Create a settings menu<br>

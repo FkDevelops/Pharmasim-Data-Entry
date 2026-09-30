@@ -1,0 +1,32 @@
+{
+    "drugs": [
+        {
+            "name": "Amoxicillin",
+            "chemicals": "Amoxicillin",
+            "doses": {250, 500},
+            "requiresRx": true,
+            "controlledSubstance": false
+        },
+
+        {
+            "name": "Acetaminophen",
+            "chemicals": "Acetaminophen",
+            "doses": {250, 325, 500},
+            "requiresRx": false,
+            "controlledSubstance": false
+        },
+
+        {
+            "name": "Oxycodone",
+            "chemicals": "Oxycodone",
+            "doses": {5, 10, 15, 20},
+            "requiresRx": true,
+            "controlledSubstance": true
+        },
+
+        {
+            "name": "Oxycocet",
+            "ingredients": ["chemical": Acetaminophen, "chemical": Oxycodone]
+        },
+    ]
+}

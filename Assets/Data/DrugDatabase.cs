@@ -1,5 +1,7 @@
 
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 class DrugDatabase
@@ -20,19 +22,45 @@ class DrugDatabase
         }
     }
 
+    //if the din is found then return the drug otherwise error to console
     public static Drug getByDin(int din)
     {
         Drug result;
-        //if the din is found then return the drug otherwise error to console
+        
         if (drugStorage.TryGetValue(din, out result))
         {
-            return drugStorage[din];
+            return result;
         }
         else
         {
             Debug.Log("error finding Din");
             return null;
         }
+    }
+
+    //autocomplete for the textbox
+    public static List<Drug> nameSearch(string name)
+    {
+        List<Drug> acList = new List<Drug>();
+        //returns empty list if user types less than 3 characters
+        if (name.Length < 3)
+        {
+            return acList;
+        }
+        else
+        {
+            //loops through each drug and loads all potential matches into a list
+            foreach (Drug drug in drugStorage.Values)
+            {
+
+                if (drug.ChemicalName.StartsWith(name, StringComparison.OrdinalIgnoreCase))
+                {
+                    acList.Add(drug);
+                }
+            }
+            return acList;
+        }
+
     }
 
 }

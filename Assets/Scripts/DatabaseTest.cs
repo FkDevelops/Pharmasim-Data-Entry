@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class DatabaseTest : MonoBehaviour
 {
@@ -11,6 +12,16 @@ public class DatabaseTest : MonoBehaviour
         Debug.Log(test.ChemicalName);
         //prints out an error
         test = DrugDatabase.getByDin(23293);
+
+        //Test autofill
+        List<Drug> amox = DrugDatabase.nameSearch("amOx");
+        List<Drug> fail = DrugDatabase.nameSearch("xyz");
+        List<Drug> oxy = DrugDatabase.nameSearch("OxYc");
+        //returns oxycodone to the console
+        foreach (Drug drug in oxy)
+        {
+            Debug.Log(drug.ChemicalName);
+        }
 
     }
 

@@ -11,6 +11,8 @@ class DrugData
         drugHolding.Add(new Drug(23049649, "Amoxicillin", 500, "Tablet", false, true));
         drugHolding.Add(new Drug(89023845, "Oxycodone", 5, "Tablet", true, true));
         drugHolding.Add(new Drug(18347248, "Acetaminophen", 325, "Caplet", false, false));
+        
+
         return drugHolding;
     }
     

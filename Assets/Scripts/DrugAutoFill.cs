@@ -2,7 +2,8 @@ using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
 using System.Threading;
-
+using UnityEngine.UI;
+using System;
 
 public class DrugAutoFill : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class DrugAutoFill : MonoBehaviour
     public TMP_Text recommendations;
     public Transform drugRecommendation;
     public GameObject drugButton;
+    private Drug selectedDrug;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,12 +34,29 @@ public class DrugAutoFill : MonoBehaviour
         List<Drug> output = DrugDatabase.nameSearch(value);
         foreach (Drug drug in output)
         {
+          
             //create the button inside drugRecommendation container and name it with the current recommendation and strength
             GameObject recommendation = Instantiate(drugButton, drugRecommendation);
+            recommendation.GetComponent<Button>().onClick.AddListener(() => OnButtonClicked(drug));
             TMP_Text recommendationText = recommendation.GetComponentInChildren<TMP_Text>();
             recommendationText.text = $"{drug.ChemicalName}: {drug.Strength}";
-            //for testing prints out matches to console
+
+            /*Testing recommendation to console
             Debug.Log($"{drug.ChemicalName}: {drug.Strength} \n");
+            */
+        }
+
+    void OnButtonClicked(Drug drug)
+        {
+            selectedDrug = drug;
+            userInput.text = $"{drug.ChemicalName}: {drug.Strength}";
+            //test by printing to log to see if din differs
+            Debug.Log($"The din for {drug.ChemicalName} is {drug.Din}");
+            //destroy all current reccomendations
+            foreach (Transform button in drugRecommendation)
+            {
+                Destroy(button.gameObject);
+            }
         }
     }
 

@@ -7,7 +7,9 @@ public class DatabaseTest : MonoBehaviour
     void Start()
     {
         DrugDatabase.loadDict();
-        //prints the name of the drug as a test
+
+        //tests 
+        /*prints the name of the drug as a test
         Drug test = DrugDatabase.getByDin(23049649);
         Debug.Log(test.ChemicalName);
         //prints out an error
@@ -21,7 +23,7 @@ public class DatabaseTest : MonoBehaviour
         foreach (Drug drug in oxy)
         {
             Debug.Log(drug.ChemicalName);
-        }
+        }*/
 
     }
 
